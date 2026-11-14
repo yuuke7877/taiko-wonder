@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.16)
+project(taiko_wonder VERSION 0.1.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+find_package(SDL2 REQUIRED)
+find_package(SDL2_ttf REQUIRED)
+
+add_executable(taiko-wonder src/main.cpp)
+target_link_libraries(taiko-wonder PRIVATE SDL2::SDL2 SDL2_ttf::SDL2_ttf)
+
+if(WIN32)
+  target_link_libraries(taiko-wonder PRIVATE SDL2::SDL2main)
+endif()
+
+if(UNIX)
+  find_package(Threads REQUIRED)
+  add_executable(taiko-wonder-server server/room_server.cpp)
+  target_link_libraries(taiko-wonder-server PRIVATE Threads::Threads)
+endif()
