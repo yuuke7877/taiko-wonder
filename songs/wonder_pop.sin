@@ -1,0 +1,6 @@
+# Original practice chart for taiko wonder
+# Extension: .sin (simple text chart)
+title=Wonder Pop Practice
+genre=0
+# Note tokens: D = Don, K = Ka. Whitespace separates notes.
+notes=D K D D K D K K D D K D K D D K D K D D K
