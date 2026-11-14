@@ -1,0 +1,344 @@
+{
+  "Texts": {
+    "CoinSystem.FreePlay": {
+      "OffsetX": 0,
+      "OffsetY": -4
+    },
+    "CoinSystem.StartPrompt": {
+      "OffsetX": 0,
+      "OffsetY": -4
+    },
+    "DanEnsoGame.SongTitle": {
+      "OffsetX": 0,
+      "OffsetY": -7
+    },
+    "DanEnsoGame.SongSubtitle": {
+      "OffsetX": 0,
+      "OffsetY": -5
+    },
+    "DanEnsoGame.SongMaker": {
+      "OffsetX": 0,
+      "OffsetY": -5
+    },
+    "DanEnsoGame.ConditionTitle": {
+      "OffsetX": 0,
+      "OffsetY": -4
+    },
+    "DanEnsoGame.ConditionValue": {
+      "OffsetX": 0,
+      "OffsetY": -7
+    },
+    "DanEnsoGame.GaugeTitle": {
+      "OffsetX": 0,
+      "OffsetY": -4
+    },
+    "DanEnsoGame.GaugeValue": {
+      "OffsetX": 0,
+      "OffsetY": -7
+    },
+    "DanSelect.Title": {
+      "OffsetX": 0,
+      "OffsetY": -4
+    },
+    "DanSelect.PanelTitle": {
+      "OffsetX": 0,
+      "OffsetY": -10
+    },
+    "DanSelect.PanelMaker": {
+      "OffsetX": 0,
+      "OffsetY": -6
+    },
+    "DanSelect.PanelLevel": {
+      "OffsetX": 0,
+      "OffsetY": -5
+    },
+    "DanSelect.PanelGaugeTitle": {
+      "OffsetX": 0,
+      "OffsetY": -4
+    },
+    "DanSelect.PanelGaugeValue": {
+      "OffsetX": 0,
+      "OffsetY": -7
+    },
+    "DanSelect.PanelBestTitle": {
+      "OffsetX": 0,
+      "OffsetY": -4
+    },
+    "DanSelect.PanelBestValue": {
+      "OffsetX": 0,
+      "OffsetY": -6
+    },
+    "DanSelect.PanelConditionTitle": {
+      "OffsetX": 0,
+      "OffsetY": -4
+    },
+    "DanSelect.PanelConditionValue": {
+      "OffsetX": 0,
+      "OffsetY": -7
+    },
+    "EnsoOption.Title": {
+      "OffsetX": 0,
+      "OffsetY": -7
+    },
+    "EnsoOption.ItemTitle": {
+      "OffsetX": 0,
+      "OffsetY": -5
+    },
+    "EnsoOption.ItemValue": {
+      "OffsetX": 0,
+      "OffsetY": -5
+    },
+    "DanResult.SongTitle": {
+      "OffsetX": 0,
+      "OffsetY": -6
+    },
+    "DanResult.SongLevel": {
+      "OffsetX": 0,
+      "OffsetY": -5
+    },
+    "DanResult.Title": {
+      "OffsetX": 0,
+      "OffsetY": -5
+    },
+    "DanResult.GaugeTitle": {
+      "OffsetX": 0,
+      "OffsetY": -5
+    },
+    "DanResult.GaugeValue": {
+      "OffsetX": 0,
+      "OffsetY": -4
+    },
+    "DanResult.ConditionTitle": {
+      "OffsetX": 0,
+      "OffsetY": -5
+    },
+    "DanResult.ConditionValue": {
+      "OffsetX": 0,
+      "OffsetY": -10
+    },
+    "Entry.ModeTitle": {
+      "OffsetX": 0,
+      "OffsetY": -10
+    },
+    "Entry.ModeExplanation": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "Entry.StartPrompt": {
+      "OffsetX": 0,
+      "OffsetY": -10
+    },
+    "Entry.RecentPlayLabel": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "Entry.RecentPlayValue": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "Entry.NewPlayer": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "Entry.Guest": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "Entry.DanCategoryTitle": {
+      "OffsetX": 0,
+      "OffsetY": -5
+    },
+    "Entry.NotificationTitle": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "Entry.NotificationMessage": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "Entry.NotificationAnnotation": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "Entry.NotificationButton": {
+      "OffsetX": 0,
+      "OffsetY": -2
+    },
+    "PlayerCustomize.CharaName": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "PlayerCustomize.CharaPage": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "PlayerCustomize.CharaTitle": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "PlayerCustomize.Wait": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "PlayerCustomize.HeaderTitle": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "PlayerCustomize.PuchiCharaName": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "PlayerCustomize.PuchiCharaPage": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "PlayerCustomize.PuchiCharaTitle": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "PlayerNameSelection.Character": {
+      "OffsetX": 0,
+      "OffsetY": -10
+    },
+    "PlayerNameSelection.Header": {
+      "OffsetX": 0,
+      "OffsetY": -5
+    },
+    "PlayerNameSelection.Navigation": {
+      "OffsetX": 0,
+      "OffsetY": -5
+    },
+    "NamePlate.PlayerName": {
+      "OffsetX": 0,
+      "OffsetY": -4
+    },
+    "NamePlate.PlayerTitle": {
+      "OffsetX": 0,
+      "OffsetY": -3
+    },
+    "Result.SongTitle": {
+      "OffsetX": 0,
+      "OffsetY": -7
+    },
+    "SongLoading.SongTitle": {
+      "OffsetX": 0,
+      "OffsetY": -12
+    },
+    "SongLoading.SongSubtitle": {
+      "OffsetX": 0,
+      "OffsetY": -8
+    },
+    "SongSelect.Title": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "SongSelect.Subtitle": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "SongSelect.DifficultyTitle": {
+      "OffsetX": 0,
+      "OffsetY": -10
+    },
+    "SongSelect.DifficultySubtitle": {
+      "OffsetX": 0,
+      "OffsetY": -5
+    },
+    "SongSelect.DanIndicator": {
+      "OffsetX": 0,
+      "OffsetY": -5
+    },
+    "SongSelect.Maker": {
+      "OffsetX": 0,
+      "OffsetY": -5
+    },
+    "SongSelect.DanIndicatorTop": {
+      "OffsetX": 0,
+      "OffsetY": -5
+    },
+    "SongSelect.DanIndicatorSide": {
+      "OffsetX": 0,
+      "OffsetY": -5
+    },
+    "SongSelect.BarBackTitle": {
+      "OffsetX": 0,
+      "OffsetY": -6
+    },
+    "SongSelect.BarBoxTitle": {
+      "OffsetX": 0,
+      "OffsetY": -10
+    },
+    "SongSelect.BarSongTitle": {
+      "OffsetX": 0,
+      "OffsetY": -6
+    },
+    "SongSelect.OpenBackTitle": {
+      "OffsetX": 0,
+      "OffsetY": -6
+    },
+    "SongSelect.OpenSongTitle": {
+      "OffsetX": 0,
+      "OffsetY": -8
+    },
+    "SongSelect.OpenSongSubtitle": {
+      "OffsetX": 0,
+      "OffsetY": -8
+    },
+    "SongSelect.BoxTitle": {
+      "OffsetX": 0,
+      "OffsetY": -10
+    },
+    "SongSelect.Explanation": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "SongSelect.Search": {
+      "OffsetX": 0,
+      "OffsetY": -8
+    },
+    "EnsoGame.SongTitle": {
+      "OffsetX": 0,
+      "OffsetY": -10
+    },
+    "EnsoGame.Genre": {
+      "OffsetX": 0,
+      "OffsetY": -3
+    },
+    "EnsoGame.SongCountCurrent": {
+      "OffsetX": 0,
+      "OffsetY": -3
+    },
+    "EnsoGame.SongCountMax": {
+      "OffsetX": 0,
+      "OffsetY": -3
+    },
+    "EnsoGame.InformationBar": {
+      "OffsetX": 0,
+      "OffsetY": -2
+    },
+    "EnsoGame.Lyrics": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "TrainingMode.JudgeTiming": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "TrainingMode.PlaySpeed": {
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    "SystemUi.Title": {
+      "OffsetX": 0,
+      "OffsetY": -8
+    },
+    "SystemUi.Body": {
+      "OffsetX": 0,
+      "OffsetY": -5
+    },
+    "SystemUi.Caption": {
+      "OffsetX": 0,
+      "OffsetY": -3
+    }
+  }
+}

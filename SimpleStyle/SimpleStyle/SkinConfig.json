@@ -1,0 +1,18 @@
+﻿{
+  "skinName": "Default",
+  "skinVersion": "1.0.0",
+  "skinDescription": "This is the default skin.",
+  "mainFontPath": "Default.ttf",
+  "detailFontPath": "Default.ttf",
+  "nameplateEnglishFontPath": "",
+  "nameplateEnglishLetterSpacing": 0,
+  "mainFontOffsetX": 0,
+  "mainFontOffsetY": 0,
+  "detailFontOffsetX": 0,
+  "detailFontOffsetY": 0,
+  "entryBGMIntroTimeMs": 0,
+  "songSelectBGMIntroTimeMs": 0,
+  "resultBGMIntroTimeMs": 0,
+  "playerCustomizeBGMIntroTimeMs": 0,
+  "danBackgroundInEndFrame": 208
+}
