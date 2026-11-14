@@ -4,27 +4,27 @@ C++17 / SDL2 rhythm-game prototype with an original colorful arcade UI. SimpleSt
 
 ## Build
 
+Requirements: CMake 3.21+, C++17 compiler, SDL2, and SDL2_ttf. Visual Studio 2022 users: see [BUILDING.md](BUILDING.md), then open the repository as a CMake project. A vcpkg manifest and Windows configure preset are included.
+
 ```sh
-cmake -S . -B build
-cmake --build build --parallel
-./build/taiko-wonder
+cmake --preset windows-vcpkg
+cmake --build --preset windows-release
 ```
 
-Requirements are CMake 3.16+, a C++17 compiler, SDL2, and SDL2_ttf.
+On Linux/macOS, use your SDL2 CMake packages: `cmake -S . -B build && cmake --build build --parallel`.
+
+## Content folders
+
+The game resolves content relative to the executable, not the current working directory. It creates `songs/` and `skins/` if absent. Add custom `.twn` charts to `songs/` and skin folders containing `skin.ini` to `skins/`; details and formats are in [songs/README.md](songs/README.md) and [skins/README.md](skins/README.md). With no custom skin, the generated default theme is used. SimpleStyle asset data is never loaded or copied.
 
 ## Features
 
-- Arcade-style title screen, attract display, genre selection, local generated practice notes, profile screen, and pause/resume/restart flow.
-- Seven genre categories; charts are generated original practice patterns, not official or licensed songs.
-- Practice options: 1.0x–4.0x speed, Don/Ka swap, きまぐれ, でたらめ, and Auto. Auto is a solo-only option.
-- Dojo menu with course/rank choices and generated multi-song practice. This is not official Dan-i Dojo certification.
-- On Unix, `taiko-wonder-server` and a TCP room-directory client are built. Online UI supports creating public/private rooms, public room listing, joining with a room code, mode selection, and baton measure settings. Server/client details and limitations are in [server/README.md](server/README.md).
-- Original synthesized UI/drum feedback and a configurable font path (where supported).
+- Arcade-style title, genre selection, local generated practice notes, profile screen, and pause/resume/restart.
+- Seven genre categories; included chart names are original practice placeholders.
+- Practice options: 1.0x–4.0x speed, Don/Ka swap, きまぐれ, でたらめ, and solo-only Auto.
+- Dojo menu with generated practice course; not official Dan-i Dojo certification.
+- UI screens and a local room directory prototype. Full real-time multiplayer synchronization and authoritative scoring are not implemented.
 
 ## Font
 
-Set `TAIKO_WONDER_FONT` to a Japanese-capable `.ttf`, `.otf`, or `.ttc` file. On Unix, the client tries common font paths as a fallback. The game does not package font files.
-
-## Online limitations
-
-The server connection is real for room directory operations. This is not yet a full synchronized online match: notes are generated locally, gameplay events are not relayed or time-synchronized, and submitted scores are not server-validated. The server defaults to localhost and is not production-ready for public Internet exposure.
+Set `TAIKO_WONDER_FONT` to a Japanese-capable `.ttf`, `.otf`, or `.ttc` file. A skin may also reference a relative font file in `skin.ini`. Font files are not bundled.
