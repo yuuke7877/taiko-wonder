@@ -10,8 +10,11 @@ find_package(SDL2_ttf REQUIRED)
 
 add_executable(taiko-wonder src/main.cpp)
 target_link_libraries(taiko-wonder PRIVATE SDL2::SDL2 SDL2_ttf::SDL2_ttf)
-
-if(WIN32)
+if(MSVC)
+  target_compile_options(taiko-wonder PRIVATE /utf-8)
+  target_compile_definitions(taiko-wonder PRIVATE _CRT_SECURE_NO_WARNINGS)
+endif()
+if(WIN32 AND TARGET SDL2::SDL2main)
   target_link_libraries(taiko-wonder PRIVATE SDL2::SDL2main)
 endif()
 

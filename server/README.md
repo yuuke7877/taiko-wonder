@@ -1,15 +1,25 @@
-# Room server protocol (prototype)
+# taiko wonder room directory
 
-Build from the repository root with CMake, then run `./build/taiko-wonder-server [port]`. The default port is 24816. The server binds to all network interfaces. Use firewall rules and a trusted network until authentication and abuse protection are added.
+This C++ server provides a small TCP room-directory MVP for the Taiko Wonder client. It supports public listing and private four-digit join codes. It does **not** relay timed note inputs, synchronize a live chart, authenticate identity, verify scores, or provide TLS. It is not safe to expose directly as an Internet service; use a trusted network or put a properly authenticated TLS gateway in front of it.
 
-Each client sends newline-delimited UTF-8 commands. Responses are newline-delimited text. Names are currently single words (no spaces).
+## Build and run
 
-- `HELP` — print supported commands.
-- `LIST` — list public rooms, ending in `END` (`EMPTY` is sent if none exist).
-- `CREATE public <room-name> <host-name>` — create a public room.
-- `CREATE private <room-name> <host-name>` — create a room whose generated four-digit code is returned to the host.
-- `JOIN <code>` — increment the room's player count (up to 8).
-- `LEAVE` — acknowledgment only; membership tracking is not implemented yet.
-- `QUIT` — close the connection.
+```sh
+cmake -S . -B build
+cmake --build build --parallel
+./build/taiko-wonder-server [port] [--public]
+```
 
-This is an early room-directory demonstration, not a production-ready public service. In particular, rooms do not expire, clients are not associated with rooms after joining, and there is no gameplay relay, authorization, TLS, rate limiting, or persistence. Do not treat a room code as authentication.
+Default port is `24816`; by default the server binds only to `127.0.0.1`. `--public` binds all interfaces and should only be used with network-level protections. Rooms are held in memory and disappear when the server exits. The simple MVP has no expiry, persistent membership, or production abuse controls.
+
+The SDL client uses `TAIKO_WONDER_SERVER=host:port` (default `127.0.0.1:24816`). The current protocol sends one command per TCP connection.
+
+## Commands
+
+- `PING` → `PONG`
+- `LIST` → public `ROOM <code> <name> <players> <host> <mode> <baton-measures>` lines, ending with `END`
+- `CREATE <public|private> <room> <host> <mode> <baton-measures>` → `CREATED <code> <visibility>`
+- `JOIN <code>` → `JOINED <code> <player-count>`
+- `LEAVE` → `OK`
+
+Names and mode tokens are single-word ASCII in this protocol. The room server only advertises rooms; online gameplay and authoritative scoring remain prototype features, not a fully synchronized competitive multiplayer service.
