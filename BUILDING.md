@@ -1,20 +1,20 @@
 # Visual Studio SDL2 setup
 
-The `.vcxproj` is configured for an SDL2 development bundle installed at `C:\SDL2`:
+The Visual Studio project is configured for the SDL2 development files at `C:\SDL2`:
 
-- Headers: `C:\SDL2\include` (also checks `include\SDL2`)
-- x64 libraries: `C:\SDL2\lib\x64`
-- Link inputs: `SDL2.lib` and `SDL2_ttf.lib`
+- Include directories: `C:\SDL2\include` and `C:\SDL2\include\SDL2`
+- x64 library directory: `C:\SDL2\lib\x64`
+- Required libraries: `SDL2.lib` and `SDL2_ttf.lib`
 
-Ensure these files actually exist:
+Verify these files exist before building:
 
 ```text
-C:\SDL2\include\SDL.h
-C:\SDL2\include\SDL_ttf.h
+C:\SDL2\include\SDL.h              (or include\SDL2\SDL.h)
+C:\SDL2\include\SDL_ttf.h          (or include\SDL2\SDL_ttf.h)
 C:\SDL2\lib\x64\SDL2.lib
 C:\SDL2\lib\x64\SDL2_ttf.lib
 ```
 
-Some SDL2 bundles put headers in `include\SDL2`; the project includes both layouts. SDL_ttf is a separate development package from SDL2, so if `SDL_ttf.h` or `SDL2_ttf.lib` is missing, install SDL2_ttf for the same x64 toolchain and place its include/lib files under `C:\SDL2`, or edit the corresponding project include/library paths to its actual installation location. Do not enter a directory path such as `C:\SDL2\lib\x64.obj` as a library: the library directory must be a folder, and linker inputs are filenames ending in `.lib`.
+If `SDL2_ttf.lib` or its headers are missing, install the SDL2_ttf development package for the same x64 architecture. In Visual Studio, select **x64**, reload `taiko-wonder.vcxproj`, then Clean and Rebuild. Japanese source is compiled with `/utf-8`.
 
-The project uses `SDL_MAIN_HANDLED`, so it does not link `SDL2main.lib`. Save Japanese C++ source as UTF-8; `/utf-8` is enabled in the project.
+The project defines `SDL_MAIN_HANDLED`, so it uses the standard `main()` entry point and does not require `SDL2main.lib`. Do not add a path ending in `.obj` to Additional Library Directories; it must be a directory path.
