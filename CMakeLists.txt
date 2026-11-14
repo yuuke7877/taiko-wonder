@@ -10,7 +10,6 @@ find_package(SDL2_ttf REQUIRED)
 
 add_executable(taiko-wonder src/main.cpp)
 target_link_libraries(taiko-wonder PRIVATE SDL2::SDL2 SDL2_ttf::SDL2_ttf)
-
 if(WIN32)
   target_link_libraries(taiko-wonder PRIVATE SDL2::SDL2main)
 endif()
@@ -19,4 +18,5 @@ if(UNIX)
   find_package(Threads REQUIRED)
   add_executable(taiko-wonder-server server/room_server.cpp)
   target_link_libraries(taiko-wonder-server PRIVATE Threads::Threads)
+  target_compile_definitions(taiko-wonder PRIVATE TAIKO_WONDER_POSIX_NETWORK=1)
 endif()

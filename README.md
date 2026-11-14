@@ -1,10 +1,8 @@
 # taiko wonder
 
-C++17 / SDL2 rhythm-game prototype with an original bright arcade-style UI. The broad layout is inspired by the provided reference screenshot and SimpleStyle organization, but no image, font, sound, chart, or other asset from SimpleStyle is copied or loaded.
+C++17 / SDL2 rhythm-game prototype with an original colorful arcade UI. SimpleStyle and the supplied reference image are visual/organizational references only; no assets, fonts, sound, or charts are copied or bundled.
 
 ## Build
-
-Requirements: CMake 3.16+, C++17 compiler, SDL2, SDL2_ttf.
 
 ```sh
 cmake -S . -B build
@@ -12,39 +10,21 @@ cmake --build build --parallel
 ./build/taiko-wonder
 ```
 
-### Japanese fonts
+Requirements are CMake 3.16+, a C++17 compiler, SDL2, and SDL2_ttf.
 
-SDL_ttf supports TrueType (`.ttf`), OpenType (`.otf`), and TrueType Collection (`.ttc`) fonts. Install a font with Japanese glyphs, such as Noto Sans CJK JP, then set the font path:
+## Features
 
-```sh
-TAIKO_WONDER_FONT=/path/to/font.otf ./build/taiko-wonder
-```
+- Arcade-style title screen, attract display, genre selection, local generated practice notes, profile screen, and pause/resume/restart flow.
+- Seven genre categories; charts are generated original practice patterns, not official or licensed songs.
+- Practice options: 1.0x–4.0x speed, Don/Ka swap, きまぐれ, でたらめ, and Auto. Auto is a solo-only option.
+- Dojo menu with course/rank choices and generated multi-song practice. This is not official Dan-i Dojo certification.
+- On Unix, `taiko-wonder-server` and a TCP room-directory client are built. Online UI supports creating public/private rooms, public room listing, joining with a room code, mode selection, and baton measure settings. Server/client details and limitations are in [server/README.md](server/README.md).
+- Original synthesized UI/drum feedback and a configurable font path (where supported).
 
-On Windows, pass a font path as the optional `--font` argument:
+## Font
 
-```powershell
-.\build\taiko-wonder.exe --font C:\\Windows\\Fonts\\meiryo.ttc
-```
+Set `TAIKO_WONDER_FONT` to a Japanese-capable `.ttf`, `.otf`, or `.ttc` file. On Unix, the client tries common font paths as a fallback. The game does not package font files.
 
-Common system font paths are also checked automatically. Only the path is used; font files are not bundled.
+## Online limitations
 
-## Controls
-
-- Title/attract: any drum key (`F`, `J`, `D`, `K`) or Enter starts; title demo display changes every 10 seconds.
-- Mode selection: Up/Down, Enter, Escape.
-- Song selection: Left/Right changes genre when the first chart is selected; Up/Down selects charts; Tab selects option; Left/Right changes options; Enter starts.
-- Drums: `F` / `J` = Don, `D` / `K` = Ka.
-- During performance: Escape opens pause menu. Up/Down selects, Enter confirms. Pause choices are resume, restart current chart, and return to genre/song selection.
-- Player settings: Up/Down selects field; Enter edits name/epithet; Left/Right changes avatar/title; Escape saves.
-
-## Features and scope
-
-- Arcade-style title screen with left/right drum prompts and a centered FREE PLAY label, plus an attract/demo view that alternates every 10 seconds.
-- Start-to-mode-selection flow and colorful genre-based song selection: Pops, Anime, Vocaloid, Game Music, Variety, Classical, and Namco Original. Included tracks are named original practice-chart placeholders with generated notes, not licensed songs or official charts.
-- Practice options: 1.0x–4.0x speed, Don/Ka swap, きまぐれ, でたらめ, and Auto.
-- Three-stage generated practice course in the dojo menu.
-- Pause menu supports resume, restart current song, or return to genre/song selection.
-- Profile fields for player name, appearance, title, and custom epithet.
-- Online settings are UI-only. Real multiplayer/server connection is not implemented in this game client.
-
-The visuals are independently drawn with SDL primitives and SDL_ttf. SimpleStyle is used only as visual/organizational reference; the game does not package or access its assets.
+The server connection is real for room directory operations. This is not yet a full synchronized online match: notes are generated locally, gameplay events are not relayed or time-synchronized, and submitted scores are not server-validated. The server defaults to localhost and is not production-ready for public Internet exposure.
