@@ -1,10 +1,10 @@
 # taiko wonder
 
-C++17 / SDL2 rhythm-game prototype with original generated practice charts and original graphics. It does not include copyrighted songs, official charts, or Taiko no Tatsujin assets. The `simplestyle` skin was not included in the repository at implementation time; the UI uses a simple original palette and can be adapted when the reference files are provided.
+A small C++17 / SDL2 rhythm-game prototype inspired by the overall layout and structure of the reference skin set in `SimpleStyle` without copying its assets or textures. The project intentionally keeps to original code, original rectangles, and original text rendering while using the reference layout as a stylistic guide.
 
 ## Build
 
-Requirements: CMake 3.16+, C++17 compiler, SDL2, SDL2_ttf. On Debian/Ubuntu install `libsdl2-dev` and `libsdl2-ttf-dev`.
+Requirements: CMake 3.16+, a C++17 compiler, SDL2, and SDL2_ttf. On Debian/Ubuntu: `sudo apt install libsdl2-dev libsdl2-ttf-dev`
 
 ```sh
 cmake -S . -B build
@@ -12,24 +12,25 @@ cmake --build build --parallel
 ./build/taiko-wonder
 ```
 
-The game searches common Japanese font locations. Install a Japanese-capable font (such as Noto Sans CJK) if Japanese text is missing.
-
 ## Controls
 
-- Title: Up/Down, Enter
-- Song selection: Up/Down chooses a practice chart; Tab selects an option; Left/Right changes it; Enter starts
-- Drum: `F` / `J` = Don, `D` / `K` = Ka; Escape exits a song
-- Player settings: Up/Down chooses a field; Left/Right cycles the avatar/title; Enter edits name or epithet; Escape saves
-- Online settings: Up/Down selects; Left/Right changes visibility/mode/baton measure; Escape returns
+- Title menu: Up/Down, Enter
+- Song select: Up/Down, Tab, Left/Right, Enter, Escape
+- Dojo course: Up/Down, Enter, Escape
+- Drum play: `F` / `J` = Don, `D` / `K` = Ka, `Esc` ends the song
+- Player settings: Up/Down changes fields; Enter edits the selected field; Left/Right changes avatar/title
 
-## Included prototype features
+## Included features
 
-- Title choices for play, dojo practice, online settings, and player settings. The AI battle mode was omitted per the request's explicit “なしで” note.
-- Solo chart practice with 1.0x–4.0x speed, Don/Ka swap (あべこべ), きまぐれ / でたらめ pattern variation, and Auto. Auto is explicitly disabled for online play.
-- Three-stage generated dojo practice course. It is not an official Dan-i Dojo implementation and does not include official songs/charts or certification rules.
-- Local profile persistence for player name, avatar, title, and user-entered epithet in `taiko-wonder.profile`.
-- An online room settings screen with public/private selection, room type, and baton measure configuration.
+- Title menu with modes: 演奏モード, 段位道場, オンライン, プレイヤー設定
+- Practice mode with speed control from 1.0x to 4.0x in 0.5x steps
+- `あべこべ` note swap mode
+- Random chart modes: `きまぐれ` and `でたらめ`
+- Auto practice for local play only
+- Dojo-style multi-stage progression with generated practice charts
+- Player customization screen: name, appearance, title, epithet
+- Online room setup screen with public/private room options and baton interval config
 
-## Online server status
+## SimpleStyle reference note
 
-CMake builds `taiko-wonder-server` on Unix-like systems. It is a room-directory prototype (see [server/README.md](server/README.md)): it does not yet provide client game networking, song/chart synchronization, room lifecycle, secure identity, or online scoring. Do not expose it as a production public service without implementing those protections and features. A game client/server protocol and deployment host still need to be added for actual online multiplayer.
+The project uses the folder structure and visual ideas from the reference skin set under `SimpleStyle` as inspiration only. No assets, textures, music, or font files from that directory are copied, redistributed, or re-used. This implementation keeps the game fully self-contained and original.
