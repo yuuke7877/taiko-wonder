@@ -1,14 +1,16 @@
 # Taiko Wonder song charts
 
-The game currently loads `.twn` text charts from the `songs/` folder beside the executable. Starter charts are included for all seven genres. The matching `.sin` files are editable human-readable source copies using the requested `.sin` extension; keep the corresponding `.twn` file beside them so the current game loader can play that chart.
+The project includes one editable `.sin` example at `songs/wonder_practice.sin`. This is Taiko Wonder's own simple text format, not a chart format compatible with another simulator. It is an original practice pattern and contains no copyrighted song data.
 
-## Text chart format
+Example properties:
 
 ```ini
-# comments start with #
-title=My practice song
+title=Wonder Practice
+artist=Taiko Wonder Community
 genre=0
+bpm=120
+offset_ms=0
 notes=D K D D K
 ```
 
-Genre values: 0 Pop, 1 Anime, 2 Vocaloid, 3 Game Music, 4 Variety, 5 Classical, 6 Namco Original. `D` means Don and `K` means Ka. These are original practice patterns, not licensed music or official charts. The `.sin` extension is a plain-text Taiko Wonder chart format and is not compatible with unrelated commercial simulator formats.
+Genre IDs: 0 Pop, 1 Anime, 2 Vocaloid, 3 Game Music, 4 Variety, 5 Classical, 6 Namco Original. `D` means Don and `K` means Ka. The current game runtime loads `.twn` charts; `.sin` is supplied as the requested editable source example and requires a converter/runtime parser before it can be played directly.

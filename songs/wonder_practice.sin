@@ -1,0 +1,8 @@
+# Original Taiko Wonder practice chart. This is the single .sin example chart.
+# Format: one key=value property per line; notes use D (Don) and K (Ka).
+title=Wonder Practice
+artist=Taiko Wonder Community
+genre=0
+bpm=120
+offset_ms=0
+notes=D K D D K D K K D D K D K D D K D K D D K
