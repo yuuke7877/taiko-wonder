@@ -1,18 +1,14 @@
-# Visual Studio SDL2 setup
+## SDL2 folder layout
 
-The Visual Studio project file is valid XML and configured for an SDL2 development bundle at `C:\SDL2`:
+The supplied SDL2 headers are located directly in `C:\SDL2` (for example `C:\SDL2\SDL.h`), not under `C:\SDL2\include`. The Visual Studio project now searches `C:\SDL2` as well as common nested include paths. The x64 libraries are expected under `C:\SDL2\lib\x64`.
 
-- Headers: `C:\SDL2\include\SDL2` and `C:\SDL2\include`
-- x64 libraries: `C:\SDL2\lib\x64`
-- Link inputs: `SDL2.lib` and `SDL2_ttf.lib`
-
-Check that these exact files exist (some packages put headers directly in `include`):
+Confirm these files exist:
 
 ```text
-C:\SDL2\include\SDL2\SDL.h   (or C:\SDL2\include\SDL.h)
-C:\SDL2\include\SDL2\SDL_ttf.h (or C:\SDL2\include\SDL_ttf.h)
+C:\SDL2\SDL.h
+C:\SDL2\SDL_ttf.h
 C:\SDL2\lib\x64\SDL2.lib
 C:\SDL2\lib\x64\SDL2_ttf.lib
 ```
 
-Use the x64 configuration. The project enables `/utf-8` for Japanese source literals and does not link `SDL2main.lib` because `SDL_MAIN_HANDLED` is used.
+SDL2_ttf may be a separate development package; if any of its files are missing, install that package and set the include/library paths to its actual locations. In Visual Studio select x64, close and reopen the project, then Clean and Rebuild.
